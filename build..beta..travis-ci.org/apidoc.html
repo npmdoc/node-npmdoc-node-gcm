@@ -1,0 +1,827 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ToothlessGear/node-gcm"
+
+    >node-gcm (v0.14.5)</a>
+</h1>
+<h4>Easy interface for Google's Cloud Messaging service (now Firebase Cloud Messaging)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm">module node-gcm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message">
+            function <span class="apidocSignatureSpan">node-gcm.</span>Message
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.MulitcastResult">
+            function <span class="apidocSignatureSpan">node-gcm.</span>MulitcastResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Result">
+            function <span class="apidocSignatureSpan">node-gcm.</span>Result
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Sender">
+            function <span class="apidocSignatureSpan">node-gcm.</span>Sender
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>Constants</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>Message.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>MulitcastResult.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>Sender.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.Message">module node-gcm.Message</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.Message">
+            function <span class="apidocSignatureSpan">node-gcm.</span>Message
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.Message.prototype">module node-gcm.Message.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.prototype.addData">
+            function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.prototype.addDataWithKeyValue">
+            function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addDataWithKeyValue
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.prototype.addDataWithObject">
+            function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addDataWithObject
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.prototype.addNotification">
+            function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addNotification
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Message.prototype.toJson">
+            function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>toJson
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.MulitcastResult">module node-gcm.MulitcastResult</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.MulitcastResult.MulitcastResult">
+            function <span class="apidocSignatureSpan">node-gcm.</span>MulitcastResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.MulitcastResult.prototype">module node-gcm.MulitcastResult.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.MulitcastResult.prototype.addResult">
+            function <span class="apidocSignatureSpan">node-gcm.MulitcastResult.prototype.</span>addResult
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.MulitcastResult.prototype.getTotal">
+            function <span class="apidocSignatureSpan">node-gcm.MulitcastResult.prototype.</span>getTotal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.Sender">module node-gcm.Sender</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Sender.Sender">
+            function <span class="apidocSignatureSpan">node-gcm.</span>Sender
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.Sender.prototype">module node-gcm.Sender.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Sender.prototype.send">
+            function <span class="apidocSignatureSpan">node-gcm.Sender.prototype.</span>send
+            <span class="apidocSignatureSpan">(message, recipient, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.Sender.prototype.sendNoRetry">
+            function <span class="apidocSignatureSpan">node-gcm.Sender.prototype.</span>sendNoRetry
+            <span class="apidocSignatureSpan">(message, recipient, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm" id="apidoc.module.node-gcm">module node-gcm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message" id="apidoc.element.node-gcm.Message">
+        function <span class="apidocSignatureSpan">node-gcm.</span>Message
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Message(raw) {
+    if (!(this instanceof Message)) {
+        return new Message(raw);
+    }
+    this.params = cleanParams(raw || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.Sender(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.<span class="apidocCodeKeywordSpan">Message</span>({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+var regTokens = [&#x27;YOUR_REG_TOKEN_HERE&#x27;];
+
+// Actually send the message
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.MulitcastResult" id="apidoc.element.node-gcm.MulitcastResult">
+        function <span class="apidocSignatureSpan">node-gcm.</span>MulitcastResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MulitcastResult() {
+    if (!(this instanceof MulitcastResult)) {
+        return new MulitcastResult();
+    }
+
+    console.warn(&#x22;You are using node-gcm MulticastResult, which is deprecated.&#x22;);
+
+    this.success = undefined;
+    this.failure = undefined;
+    this.canonicalIds = undefined;
+    this.multicastId = undefined;
+    this.results = [];
+    this.retryMulticastIds = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Result" id="apidoc.element.node-gcm.Result">
+        function <span class="apidocSignatureSpan">node-gcm.</span>Result
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Result() {
+    this.messageId = undefined;
+    this.canonicalRegistrationId = undefined;
+    this.errorCode = undefined;
+
+    console.warn(&#x22;You are using node-gcm Result which is deprecated&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Sender" id="apidoc.element.node-gcm.Sender">
+        function <span class="apidocSignatureSpan">node-gcm.</span>Sender
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sender(key, options) {
+    if (!(this instanceof Sender)) {
+        return new Sender(key, options);
+    }
+
+    this.key = key;
+    this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+According to below **Usage** reference, we could create such application:
+
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.<span class="apidocCodeKeywordSpan">Sender</span>(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.Message({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.Message" id="apidoc.module.node-gcm.Message">module node-gcm.Message</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.Message" id="apidoc.element.node-gcm.Message.Message">
+        function <span class="apidocSignatureSpan">node-gcm.</span>Message
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Message(raw) {
+    if (!(this instanceof Message)) {
+        return new Message(raw);
+    }
+    this.params = cleanParams(raw || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.Sender(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.<span class="apidocCodeKeywordSpan">Message</span>({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+var regTokens = [&#x27;YOUR_REG_TOKEN_HERE&#x27;];
+
+// Actually send the message
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.Message.prototype" id="apidoc.module.node-gcm.Message.prototype">module node-gcm.Message.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.prototype.addData" id="apidoc.element.node-gcm.Message.prototype.addData">
+        function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addData = function () {
+    return handleParamSet.call(this, arguments, &#x22;data&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		icon: &#x22;ic_launcher&#x22;,
+		body: &#x22;This is a notification that will be displayed if your app is in the background.&#x22;
+	}
+});
+
+// Change the message data
+// ... as key-value
+message.<span class="apidocCodeKeywordSpan">addData</span>(&#x27;key1&#x27;,&#x27;message1&#x27;);
+message.addData(&#x27;key2&#x27;,&#x27;message2&#x27;);
+
+// ... or as a data object (overwrites previous data object)
+message.addData({
+	key1: &#x27;message1&#x27;,
+	key2: &#x27;message2&#x27;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.prototype.addDataWithKeyValue" id="apidoc.element.node-gcm.Message.prototype.addDataWithKeyValue">
+        function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addDataWithKeyValue
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDataWithKeyValue = function (key, value) {
+    console.warn(&#x22;Message#addDataWithKeyValue has been deprecated. Please use Message#addData instead.&#x22;);
+    this.addData(key, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.prototype.addDataWithObject" id="apidoc.element.node-gcm.Message.prototype.addDataWithObject">
+        function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addDataWithObject
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDataWithObject = function (obj) {
+    console.warn(&#x22;Message#addDataWithObject has been deprecated. Please use Message#addData instead.&#x22;);
+    this.addData(obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.prototype.addNotification" id="apidoc.element.node-gcm.Message.prototype.addNotification">
+        function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>addNotification
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addNotification = function () {
+    return handleParamSet.call(this, arguments, &#x22;notification&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Notification usage
+
+```js
+
+var message = new gcm.Message();
+
+// Add notification payload as key value
+message.<span class="apidocCodeKeywordSpan">addNotification</span>(&#x27;title&#x27;, &#x27;Alert!!!&#x27;);
+message.addNotification(&#x27;body&#x27;, &#x27;Abnormal data access&#x27;);
+message.addNotification(&#x27;icon&#x27;, &#x27;ic_launcher&#x27;);
+
+// as object
+message.addNotification({
+title: &#x27;Alert!!!&#x27;,
+body: &#x27;Abnormal data access&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Message.prototype.toJson" id="apidoc.element.node-gcm.Message.prototype.toJson">
+        function <span class="apidocSignatureSpan">node-gcm.Message.prototype.</span>toJson
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJson = function () {
+    var json = {};
+
+    Object.keys(this.params).forEach(function(param) {
+        var optionDescription = messageOptions[param];
+        if(!optionDescription) {
+            return;
+        }
+        var key = optionDescription.__argName || param;
+        json[key] = this.params[param];
+    }.bind(this));
+
+    return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.MulitcastResult" id="apidoc.module.node-gcm.MulitcastResult">module node-gcm.MulitcastResult</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.MulitcastResult.MulitcastResult" id="apidoc.element.node-gcm.MulitcastResult.MulitcastResult">
+        function <span class="apidocSignatureSpan">node-gcm.</span>MulitcastResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MulitcastResult() {
+    if (!(this instanceof MulitcastResult)) {
+        return new MulitcastResult();
+    }
+
+    console.warn(&#x22;You are using node-gcm MulticastResult, which is deprecated.&#x22;);
+
+    this.success = undefined;
+    this.failure = undefined;
+    this.canonicalIds = undefined;
+    this.multicastId = undefined;
+    this.results = [];
+    this.retryMulticastIds = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.MulitcastResult.prototype" id="apidoc.module.node-gcm.MulitcastResult.prototype">module node-gcm.MulitcastResult.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.MulitcastResult.prototype.addResult" id="apidoc.element.node-gcm.MulitcastResult.prototype.addResult">
+        function <span class="apidocSignatureSpan">node-gcm.MulitcastResult.prototype.</span>addResult
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addResult = function (result) {
+    this.results.push(result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.MulitcastResult.prototype.getTotal" id="apidoc.element.node-gcm.MulitcastResult.prototype.getTotal">
+        function <span class="apidocSignatureSpan">node-gcm.MulitcastResult.prototype.</span>getTotal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTotal = function () {
+    return this.success + this.failure;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.Sender" id="apidoc.module.node-gcm.Sender">module node-gcm.Sender</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Sender.Sender" id="apidoc.element.node-gcm.Sender.Sender">
+        function <span class="apidocSignatureSpan">node-gcm.</span>Sender
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sender(key, options) {
+    if (!(this instanceof Sender)) {
+        return new Sender(key, options);
+    }
+
+    this.key = key;
+    this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+According to below **Usage** reference, we could create such application:
+
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.<span class="apidocCodeKeywordSpan">Sender</span>(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.Message({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.Sender.prototype" id="apidoc.module.node-gcm.Sender.prototype">module node-gcm.Sender.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Sender.prototype.send" id="apidoc.element.node-gcm.Sender.prototype.send">
+        function <span class="apidocSignatureSpan">node-gcm.Sender.prototype.</span>send
+        <span class="apidocSignatureSpan">(message, recipient, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (message, recipient, options, callback) {
+    if(typeof options == &#x22;function&#x22;) {
+        callback = options;
+        options = null;
+    }
+    else if(!callback) {
+        callback = function() {};
+    }
+    options = cleanOptions(options);
+
+    if(message.params &#x26;&#x26; message.params.data &#x26;&#x26; message.params.data.from) {
+        console.warn(&#x22;Sending a notification with the &#x27;from&#x27; data attribute may invoke a 400 Bad Request by FCM.&#x22;);
+    }
+
+    if(options.retries == 0) {
+        return this.sendNoRetry(message, recipient, callback);
+    }
+
+    var self = this;
+
+    this.sendNoRetry(message, recipient, function(err, response, attemptedRegTokens) {
+        if (err) {
+            // Attempt to determine HTTP status code
+            var statusCode = typeof err === &#x27;number&#x27; ? err : (err.code || 0);
+
+            // 4xx error?
+            if (statusCode &#x3e; 399 &#x26;&#x26; statusCode &#x3c; 500) {
+                debug(&#x22;Error 4xx -- no use retrying. Something is wrong with the request (probably authentication?)&#x22;);
+                return callback(err);
+            }
+            return retry(self, message, recipient, options, callback);
+        }
+        if(!response.results) {
+            return callback(null, response);
+        }
+        checkForBadTokens(response.results, attemptedRegTokens, function(err, unsentRegTokens, regTokenPositionMap) {
+            if(err) {
+                return callback(err);
+            }
+            if (unsentRegTokens.length == 0) {
+                return callback(null, response);
+            }
+
+            debug(&#x22;Retrying &#x22; + unsentRegTokens.length + &#x22; unsent registration tokens&#x22;);
+
+            retry(self, message, unsentRegTokens, options, function(err, retriedResponse) {
+                if(err) {
+                    return callback(null, response);
+                }
+                response = updateResponse(response, retriedResponse, regTokenPositionMap, unsentRegTokens);
+                callback(null, response);
+            });
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+var regTokens = [&#x27;YOUR_REG_TOKEN_HERE&#x27;];
+
+// Actually send the message
+sender.<span class="apidocCodeKeywordSpan">send</span>(message, { registrationTokens: regTokens }, function (err, response) {
+	if (err) console.error(err);
+	else console.log(response);
+});
+```
+
+## Usage
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.Sender.prototype.sendNoRetry" id="apidoc.element.node-gcm.Sender.prototype.sendNoRetry">
+        function <span class="apidocSignatureSpan">node-gcm.Sender.prototype.</span>sendNoRetry
+        <span class="apidocSignatureSpan">(message, recipient, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendNoRetry = function (message, recipient, callback) {
+    if(!callback) {
+        callback = function() {};
+    }
+
+    getRequestBody(message, recipient, function(err, body) {
+        if(err) {
+            return callback(err);
+        }
+
+        //Build request options, allowing some to be overridden
+        var request_options = _.defaultsDeep({
+            method: &#x27;POST&#x27;,
+            headers: {
+                &#x27;Authorization&#x27;: &#x27;key=&#x27; + this.key
+            },
+            uri: Constants.GCM_SEND_URI,
+            json: body
+        }, this.options, {
+            timeout: Constants.SOCKET_TIMEOUT
+        });
+
+        request(request_options, function (err, res, resBodyJSON) {
+            if (err) {
+                return callback(err);
+            }
+            if (res.statusCode &#x3e;= 500) {
+                debug(&#x27;GCM service is unavailable (500)&#x27;);
+                return callback(res.statusCode);
+            }
+            if (res.statusCode === 401) {
+                debug(&#x27;Unauthorized (401). Check that your API token is correct.&#x27;);
+                return callback(res.statusCode);
+            }
+            if (res.statusCode !== 200) {
+                debug(&#x27;Invalid request (&#x27; + res.statusCode + &#x27;): &#x27; + resBodyJSON);
+                return callback(res.statusCode);
+            }
+            if (!resBodyJSON) {
+                debug(&#x27;Empty response received (&#x27; + res.statusCode + &#x27; &#x27; + res.statusMessage + &#x27;)&#x27;);
+                // Spoof error code 400 to avoid retrying the request
+                return callback({error: res.statusMessage, code: 400});
+            }
+            callback(null, resBodyJSON, body.registration_ids || [ body.to ]);
+        });
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Add the registration tokens of the devices you want to send to
+var registrationTokens = [];
+registrationTokens.push(&#x27;regToken1&#x27;);
+registrationTokens.push(&#x27;regToken2&#x27;);
+
+// Send the message
+// ... trying only once
+sender.<span class="apidocCodeKeywordSpan">sendNoRetry</span>(message, { registrationTokens: registrationTokens }, function(err,
+response) {
+if(err) console.error(err);
+else    console.log(response);
+});
+
+// ... or retrying
+sender.send(message, { registrationTokens: registrationTokens }, function (err, response) {
+if(err) console.error(err);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
