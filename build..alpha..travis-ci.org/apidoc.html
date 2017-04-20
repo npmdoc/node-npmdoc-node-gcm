@@ -51,7 +51,7 @@
 
         href="https://github.com/ToothlessGear/node-gcm"
 
-    >node-gcm (v0.14.5)</a>
+    >node-gcm (v0.14.6)</a>
 </h1>
 <h4>Easy interface for Google's Cloud Messaging service (now Firebase Cloud Messaging)</h4>
 <div class="apidocSectionDiv"><a
@@ -118,6 +118,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>Sender.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.</span>node_gcm</span>
 
         </li>
 
@@ -255,6 +261,52 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-gcm.node_gcm">module node-gcm.node_gcm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.node_gcm.Message">
+            function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Message
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.node_gcm.MulitcastResult">
+            function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>MulitcastResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.node_gcm.Result">
+            function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Result
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-gcm.node_gcm.Sender">
+            function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Sender
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Constants</span>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -373,6 +425,8 @@ var message = new gcm.Message({
 // Specify which registration IDs to deliver the message to
 ...</pre></li>
     </ul>
+
+
 
 
 
@@ -815,6 +869,128 @@ sender.send(message, { registrationTokens: registrationTokens }, function (err, 
 if(err) console.error(err);
 ...</pre></li>
     </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-gcm.node_gcm" id="apidoc.module.node-gcm.node_gcm">module node-gcm.node_gcm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.node_gcm.Message" id="apidoc.element.node-gcm.node_gcm.Message">
+        function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Message
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Message(raw) {
+    if (!(this instanceof Message)) {
+        return new Message(raw);
+    }
+    this.params = cleanParams(raw || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.Sender(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.<span class="apidocCodeKeywordSpan">Message</span>({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+var regTokens = [&#x27;YOUR_REG_TOKEN_HERE&#x27;];
+
+// Actually send the message
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.node_gcm.MulitcastResult" id="apidoc.element.node-gcm.node_gcm.MulitcastResult">
+        function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>MulitcastResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MulitcastResult() {
+    if (!(this instanceof MulitcastResult)) {
+        return new MulitcastResult();
+    }
+
+    console.warn(&#x22;You are using node-gcm MulticastResult, which is deprecated.&#x22;);
+
+    this.success = undefined;
+    this.failure = undefined;
+    this.canonicalIds = undefined;
+    this.multicastId = undefined;
+    this.results = [];
+    this.retryMulticastIds = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.node_gcm.Result" id="apidoc.element.node-gcm.node_gcm.Result">
+        function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Result
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Result() {
+    this.messageId = undefined;
+    this.canonicalRegistrationId = undefined;
+    this.errorCode = undefined;
+
+    console.warn(&#x22;You are using node-gcm Result which is deprecated&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-gcm.node_gcm.Sender" id="apidoc.element.node-gcm.node_gcm.Sender">
+        function <span class="apidocSignatureSpan">node-gcm.node_gcm.</span>Sender
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sender(key, options) {
+    if (!(this instanceof Sender)) {
+        return new Sender(key, options);
+    }
+
+    this.key = key;
+    this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+According to below **Usage** reference, we could create such application:
+
+```js
+var gcm = require(&#x27;node-gcm&#x27;);
+
+// Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
+var sender = new gcm.<span class="apidocCodeKeywordSpan">Sender</span>(&#x27;YOUR_API_KEY_HERE&#x27;);
+
+// Prepare a message to be sent
+var message = new gcm.Message({
+    data: { key1: &#x27;msg1&#x27; }
+});
+
+// Specify which registration IDs to deliver the message to
+...</pre></li>
+    </ul>
+
+
 
 
 </div>
